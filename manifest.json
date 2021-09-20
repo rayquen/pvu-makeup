@@ -1,0 +1,30 @@
+{
+    "name": "PVU Makeup",
+    "description": "Add more information and utilities to pvu",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "worker.js"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "action": {
+        "default_popup": "views/main/main.html",
+        "default_icon": {
+            "16": "/img/ico/pvumakeup16.png",
+            "32": "/img/ico/pvumakeup32.png",
+            "48": "/img/ico/pvumakeup48.png",
+            "128": "/img/ico/pvumakeup128.png"
+        }
+    },
+    "options_page": "views/menu/menu.html",
+    "icons": {
+        "16": "/img/ico/pvumakeup16.png",
+        "32": "/img/ico/pvumakeup32.png",
+        "48": "/img/ico/pvumakeup48.png",
+        "128": "/img/ico/pvumakeup128.png"
+    }
+}
