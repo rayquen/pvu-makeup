@@ -1,25 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="../../css/button.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <div class="container" style="width: 200px; height: 200px;">
-        
-    </div>
 
-    <div class="checkbox">
-        <label>
-            <input
-                type="checkbox"
-                checked
-                data-toggle="toggle">
-            Cotizaciones
-        </label>
+    <div class="main">
+
+        <div class="card text-white bg-dark mb-3">
+            <div class="card-header">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="chkMakeup">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">
+                        <h6>PVU Makeup</h6>
+                    </label>
+                </div>
+            </div>
+            <div class="card-body makeup">
+
+                <div class="card text-white bg-secondary mb-3">
+                    <div class="card-header">Saldos y Monedas</div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="chkCotizationUSD">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Cotización USD</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="chkCotizationARS">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Cotización ARS</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="chkCotizationLEPVU">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">LE a PVU</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card text-white bg-secondary mb-3">
+                    <div class="card-header">Jugabilidad</div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="chkHighlightPlantsWithoutWater">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Resaltar plantas sin agua</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="chkHighlightPlantsWithCrows">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Resaltar cuervos</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="chkShowSchedule">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Mostrar horarios</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card text-white bg-secondary mb-3">
+                    <div class="card-header">Grupos y turnos</div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="chkShowNextShift">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Mostrar siguiente turno</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="chkShowTimeLeft">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Mostrar tiempo restante</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="chkShowShifts">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Mostrar turnos</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
     </div>
 
     <script src="../../lib/jquery/js/jquery-3.6.0.min.js"></script>
