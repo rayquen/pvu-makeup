@@ -12,6 +12,9 @@
         "activeTab",
         "scripting"
     ],
+    "host_permissions": [
+        "https://marketplace.plantvsundead.com/*"
+    ],
     "action": {
         "default_popup": "views/main/main.html",
         "default_icon": {
