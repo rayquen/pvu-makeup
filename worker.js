@@ -64,7 +64,24 @@ chrome.runtime.onInstalled.addListener(() => {
 
     chrome.tabs.onActivated.addListener((activeInfo)=>{
         console.log(`[onActivated]: ${JSON.stringify(activeInfo)}`)
+        chrome.tabs.get(activeInfo.tabId).then( (tab)=>{
+            console.log(`[onActivated] tab getted`, tab)
 
+            if (tab.status!=="complete"){
+                return
+            }
+
+            if (tab.url=="https://marketplace.plantvsundead.com/farm#/farm"){
+                chrome.scripting.executeScript({
+                    target: {
+                        tabId: tab.id
+                    },
+                    function: makeupFarmPage
+                })
+            }
+        } )
+    })
+})
 
 function updateMoney() {
 
@@ -103,5 +120,9 @@ function updateMoney() {
         }).catch(e => {
             console.error('[updateMoney]',e)
         })
+}
 
+function makeupFarmPage(){
+    console.log('[makeupFarmPage] start')
+    console.log('[makeupFarmPage] end')
 }
