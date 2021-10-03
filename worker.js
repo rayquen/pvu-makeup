@@ -39,25 +39,31 @@ let config = {
     }
 }
 
+//update money
+setInterval(updateMoney, 10 * 60 * 1000)
+
+function saveConfig(){
+    chrome.storage.sync.set({ config })
+}
+
 chrome.runtime.onInstalled.addListener(() => {
 
     chrome.storage.sync.get('config', (data) => {
+        console.log(`[onInstalled] config: ${JSON.stringify(data)}`)
         if (data !== undefined && config in data) {
             config = data.config
         }
 
         if (config.extension.firstTime) {
-            updateMoney()
+            console.log(`[onInstalled] firstTime`)
         }
 
         config.extension.firstTime = false
+        saveConfig()
     })
 
-    saveConfig()
-})
-
-//update money
-setInterval(updateMoney, 10 * 60 * 1000)
+    chrome.tabs.onActivated.addListener((activeInfo)=>{
+        console.log(`[onActivated]: ${JSON.stringify(activeInfo)}`)
 
 
 function updateMoney() {
@@ -98,8 +104,4 @@ function updateMoney() {
             console.error('[updateMoney]',e)
         })
 
-}
-
-function saveConfig(){
-    chrome.storage.sync.set({ config })
 }
